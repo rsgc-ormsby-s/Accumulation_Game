@@ -16,6 +16,10 @@ float EllipseW = 50;
 float EllipseH = 50;
 float EllipseSH = 0;
 float EllipseSV = 0;
+float YPY = random(100, 200);
+float YPX = random(100, 200);
+float RPY = random(200, 300);
+float RPX = random(200, 300);
 
 //Functions only run once.
 void setup() {
@@ -29,6 +33,10 @@ void draw() {
   //Create the Illusion of Movement
   EllipseX = EllipseX + EllipseSV;
   EllipseY = EllipseY + EllipseSH;
+  //Make the Pellets Appear Randomly
+  //Creates the Pellets
+  ellipse(YPY, YPX, 15, 15);
+  ellipse(RPY, RPX, 15, 15); 
 }
 
 void keyPressed() {
@@ -36,6 +44,7 @@ void keyPressed() {
     EllipseSH = 2;
     EllipseSV = 0;
     println("Hello");
+    println("D'herro");
   }
   if (key == 'w'){
     EllipseSH = -2;
