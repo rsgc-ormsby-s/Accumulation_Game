@@ -20,6 +20,10 @@ float YPY = random(1, 600);
 float YPX = random(1, 600);
 float RPY = random(1, 600);
 float RPX = random(1, 600);
+float BPY = random(1, 600);
+float BPX = random(1, 600);
+float GPY = random(1, 600);
+float GPX = random(1, 600);
 
 //Functions only run once.
 void setup() {
@@ -46,6 +50,12 @@ void draw() {
   //Create Red Pellet
   fill(250, 0, 0);
   rect(RPY, RPX, 15, 15); 
+  //Create Blue Pellet
+  fill(0, 0, 250);
+  rect(BPY, BPX, 15, 15);
+  //Create Green Pellet
+  fill(0, 250, 0); 
+  rect(GPY, GPX, 15, 15);
   
   //Create Boundaries
   //Downward Boundaries
@@ -75,6 +85,7 @@ void draw() {
       RectSH = 2;
       RectSV = 0;
       println("Is the Program working?");
+      println("hello");
     }
     if (key == 'w') {
       RectSH = -2;
