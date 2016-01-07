@@ -31,18 +31,18 @@ void setup() {
 }
 
 void draw() {
-  
+
   //Create and Clear the Background
   background(0, 0, 100);
   fill(128, 35, 205);
   rect(RectX, RectY, RectW, RectH);
-  
+
   //Create the Illusion of Movement
   //Vertical Movement
   RectX = RectX + RectSV;
   //Horizontal Movement
   RectY = RectY + RectSH;
-  
+
   //Creates the Pellets
   //Create Yellow Pellet
   fill(255, 215, 0);
@@ -57,33 +57,51 @@ void draw() {
   fill(0, 250, 0); 
   rect(GPX, GPY, 10, 10);
 
-  
+
   //If the circle is touching the pellets, send pellet off screen, make circle bigger or smaller (depending on pellet colour)
-  
-  //Yellow Pellet IsTouching
-  if(RectX > YPX - 10 && YPX + 10 > RectX && RectY > YPY - 10 && RectY < YPY + 10 ){
+
+  //Yellow Pellet IsTouching (makes the object you touch fly away and makes the rectangle smaller by a large amount)
+  if (RectX > YPX - 10 && YPX + 10 > RectX && RectY > YPY - 10 && RectY < YPY + 10 ) {
     YPX = 1000;
     RectW = RectW - 8;
     RectH = RectH - 8;
   }
-  //Create Boundaries
-  //Downward Boundaries
-  if (RectY > 800) {
-    RectY = 400; 
-    RectX = 400; 
-  }
-  //Downward Boundaries
-  if (RectY < 1){
-    RectY = 400;
-    RectX = 400;
-  }
+    //Red Pellet IsTouching (makes the object you touch fly away and makes the rectangle smaller by a small amount)
+    if (RectX > RPX - 10 && RPX + 10 > RectX && RectY > RPY - 10 && RectY < RPY + 10 ) {
+      RPX = 1000;
+      RectW = RectW - 4;
+      RectH = RectH - 4;
+    }
+    //Blue Pellet IsTouching (makes the object you touch fly away and makes the rectangle bigger by a small amount)
+    if (RectX > BPX - 10 && BPX + 10 > RectX && RectY > BPY - 10 && RectY < BPY + 10 ) {
+      BPX = 1000;
+      RectW = RectW + 10;
+      RectH = RectH + 10;
+    }
+    //Green Pellet isTouching (makes the object you touch fly away and makes the rectangle bigger by a large amount)
+    if (RectX > GPX - 10 && GPX + 10 > RectX && RectY > GPY - 10 && RectY < GPY + 10 ) {
+      GPX = 1000;
+      RectW = RectW + 15;
+      RectH = RectH + 15;
+    }
+    //Create Boundaries
+    //Downward Boundaries
+    if (RectY > 800) {
+      RectY = 400; 
+      RectX = 400;
+    }
+    //Downward Boundaries
+    if (RectY < 1) {
+      RectY = 400;
+      RectX = 400;
+    }
     //Rightward Boundaries
     if (RectX > 800) {
       RectY = 400;
       RectX = 400;
     }
     //Leftward Boundaries
-    if (RectX < 1){
+    if (RectX < 1) {
       RectY = 400;
       RectX = 400;
     }
