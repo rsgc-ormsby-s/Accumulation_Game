@@ -12,8 +12,8 @@
 //Global Variables
 float RectY = 400;
 float RectX = 400;
-float RectW = 50;
-float RectH = 50;
+float RectW = 10;
+float RectH = 10;
 float RectSH = 0;
 float RectSV = 0;
 float YPY = random(1, 600);
@@ -35,7 +35,7 @@ void draw() {
   //Create and Clear the Background
   background(0, 0, 100);
   fill(128, 35, 205);
-  ellipse(RectX, RectY, RectW, RectH);
+  rect(RectX, RectY, RectW, RectH);
   
   //Create the Illusion of Movement
   //Vertical Movement
@@ -46,17 +46,26 @@ void draw() {
   //Creates the Pellets
   //Create Yellow Pellet
   fill(255, 215, 0);
-  rect(YPY, YPX, 15, 15);
+  rect(YPX, YPY, 10, 10);
   //Create Red Pellet
   fill(250, 0, 0);
-  rect(RPY, RPX, 15, 15); 
+  rect(RPX, RPY, 10, 10); 
   //Create Blue Pellet
   fill(0, 0, 250);
-  rect(BPY, BPX, 15, 15);
+  rect(BPX, BPY, 10, 10);
   //Create Green Pellet
   fill(0, 250, 0); 
-  rect(GPY, GPX, 15, 15);
+  rect(GPX, GPY, 10, 10);
+
   
+  //If the circle is touching the pellets, send pellet off screen, make circle bigger or smaller (depending on pellet colour)
+  
+  //Yellow Pellet IsTouching
+  if(RectX > YPX - 10 && YPX + 10 > RectX && RectY > YPY - 10 && RectY < YPY + 10 ){
+    YPX = 1000;
+    RectW = RectW - 8;
+    RectH = RectH - 8;
+  }
   //Create Boundaries
   //Downward Boundaries
   if (RectY > 800) {
@@ -84,8 +93,6 @@ void draw() {
     if (key == 's') {
       RectSH = 2;
       RectSV = 0;
-      println("Is the Program working?");
-      println("hello");
     }
     if (key == 'w') {
       RectSH = -2;
