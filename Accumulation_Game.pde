@@ -12,8 +12,8 @@
 //Global Variables
 float RectY = 400;
 float RectX = 400;
-float RectW = 30;
-float RectH = 30;
+float RectW = 15;
+float RectH = 15;
 float RectSH = 0;
 float RectSV = 0;
 
@@ -106,10 +106,10 @@ fill(255, 215, 0);
 rect(YPX3, YPY3, 10, 10);
 //Creates the Third Red Pellet
 fill(250, 0, 0);
-rect(RPX2, RPY2, 10, 10);
+rect(RPX3, RPY3, 10, 10);
 //Creates the Third Blue Pellet
 fill(0, 0, 250);
-
+rect(BPX3, BPY3, 10, 10);
 
 //Creates the Third Green Pellet
 fill(0, 250, 0);
@@ -119,25 +119,25 @@ rect(GPX3, GPY3, 10, 10);
   //Hit Detection for First Set of Pellets
   
   //Yellow Pellet IsTouching (makes the object you touch fly away and makes the rectangle smaller by a large amount)
-  if (RectX > YPX - 10 && YPX + 10 > RectX && RectY > YPY - 10 && RectY < YPY + 10 ) {
+  if (RectX > YPX - 15 && YPX + 15 > RectX && RectY > YPY - 15 && RectY < YPY + 15 ) {
     YPX = 1000;
     RectW = RectW - 8;
     RectH = RectH - 8;
   }
     //Red Pellet IsTouching (makes the object you touch fly away and makes the rectangle smaller by a small amount)
-    if (RectX > RPX - 10 && RPX + 10 > RectX && RectY > RPY - 10 && RectY < RPY + 10 ) {
+    if (RectX > RPX - 15 && RPX + 15 > RectX && RectY > RPY - 15 && RectY < RPY + 15 ) {
       RPX = 1000;
       RectW = RectW - 4;
       RectH = RectH - 4;
     }
     //Blue Pellet IsTouching (makes the object you touch fly away and makes the rectangle bigger by a small amount)
-    if (RectX > BPX - 10 && BPX + 10 > RectX && RectY > BPY - 10 && RectY < BPY + 10 ) {
+    if (RectX > BPX - 15 && BPX + 15 > RectX && RectY > BPY - 15 && RectY < BPY + 15 ) {
       BPX = 1000;
       RectW = RectW + 10;
       RectH = RectH + 10;
     }
     //Green Pellet isTouching (makes the object you touch fly away and makes the rectangle bigger by a large amount)
-    if (RectX > GPX - 10 && GPX + 10 > RectX && RectY > GPY - 10 && RectY < GPY + 10 ) {
+    if (RectX > GPX - 15 && GPX + 15 > RectX && RectY > GPY - 15 && RectY < GPY + 15 ) {
       GPX = 1000;
       RectW = RectW + 15;
       RectH = RectH + 15;
@@ -147,7 +147,7 @@ rect(GPX3, GPY3, 10, 10);
     
     //Yellow Pellet #2 isTouching
       
-  if (RectX > YPX2 - 10 && YPX2 + 10 > RectX && RectY > YPY2 - 10 && RectY < YPY2 + 10 ) {
+  if (RectX > YPX2 - 15 && YPX2 + 15 > RectX && RectY > YPY2 - 15 && RectY < YPY2 + 15 ) {
     YPX2 = 1000;
     RectW = RectW - 8;
     RectH = RectH - 8;
@@ -155,7 +155,7 @@ rect(GPX3, GPY3, 10, 10);
   
     //Red Pellet #2 isTouching
     
-    if (RectX > RPX2 - 10 && RPX2 + 10 > RectX && RectY > RPY2 - 10 && RectY < RPY2 + 10 ) {
+    if (RectX > RPX2 - 15 && RPX2 + 15 > RectX && RectY > RPY2 - 15 && RectY < RPY2 + 15 ) {
       RPX2 = 1000;
       RectW = RectW - 4;
       RectH = RectH - 4;
@@ -163,7 +163,7 @@ rect(GPX3, GPY3, 10, 10);
     
     //Blue Pellet #2 isTouching
     
-    if (RectX > BPX2 - 10 && BPX2 + 10 > RectX && RectY > BPY2 - 10 && RectY < BPY2 + 10 ) {
+    if (RectX > BPX2 - 15 && BPX2 + 15 > RectX && RectY > BPY2 - 15 && RectY < BPY2 + 15 ) {
       BPX2 = 1000;
       RectW = RectW + 10;
       RectH = RectH + 10;
@@ -172,7 +172,7 @@ rect(GPX3, GPY3, 10, 10);
     
     //Green Pellet #2 isTouching
     
-    if (RectX > GPX2 - 10 && GPX2 + 10 > RectX && RectY > GPY2 - 10 && RectY < GPY2 + 10 ) {
+    if (RectX > GPX2 - 15 && GPX2 + 15 > RectX && RectY > GPY2 - 15 && RectY < GPY2 + 15 ) {
       GPX2 = 1000;
       RectW = RectW + 15;
       RectH = RectH + 15;
@@ -183,7 +183,7 @@ rect(GPX3, GPY3, 10, 10);
     
     //Yellow Pellet #3 isTouching 
     
-    if (RectX > YPX3 - 10 && YPX3 + 10 > RectX && RectY > YPY3 - 10 && RectY < YPY3 + 10 ) {
+    if (RectX > YPX3 - 15 && YPX3 + 15 > RectX && RectY > YPY3 - 15 && RectY < YPY3 + 15 ) {
     YPX3 = 1000;
     RectW = RectW - 8;
     RectH = RectH - 8;
@@ -191,7 +191,7 @@ rect(GPX3, GPY3, 10, 10);
   
     //Red Pellet #3 isTouching
     
-      if (RectX > RPX3 - 10 && RPX3 + 10 > RectX && RectY > RPY3 - 10 && RectY < RPY3 + 10 ) {
+      if (RectX > RPX3 - 15 && RPX3 + 15 > RectX && RectY > RPY3 - 15 && RectY < RPY3 + 15 ) {
       RPX3 = 1000;
       RectW = RectW - 4;
       RectH = RectH - 4;
@@ -199,14 +199,14 @@ rect(GPX3, GPY3, 10, 10);
     
     //Blue Pellet #3 isTouching
     
-        if (RectX > BPX3 - 10 && BPX3 + 10 > RectX && RectY > BPY3 - 10 && RectY < BPY3 + 10 ) {
+        if (RectX > BPX3 - 15 && BPX3 + 15 > RectX && RectY > BPY3 - 15 && RectY < BPY3 + 15 ) {
       BPX3 = 1000;
       RectW = RectW + 10;
       RectH = RectH + 10;
         }
     //Green Pellet #3 isTouching
     
-     if (RectX > GPX3 - 10 && GPX3 + 10 > RectX && RectY > GPY3 - 10 && RectY < GPY3 + 10 ) {
+     if (RectX > GPX3 - 15 && GPX3 + 15 > RectX && RectY > GPY3 - 15 && RectY < GPY3 + 15 ) {
       GPX3 = 1000;
       RectW = RectW + 15;
       RectH = RectH + 15;
@@ -235,12 +235,25 @@ rect(GPX3, GPY3, 10, 10);
       RectY = 400;
       RectX = 400;
     }
+    //Win Conditions (if all blue and green pellets are hit any you attain maximum size, while not hitting any of the red pellets or yellow pellets)
+    if(RectW == 90 && GPX == 1000 && GPX2 == 1000 && GPX3 == 1000 && BPX == 1000 && BPX2 == 1000 && BPX3 == 1000){
+      textSize(80);
+      text("YOU WIN", 120, 200);
+      noLoop();
+    }
+    //Win Conditions (if all blue and green pellets are hit and you have hit atleast one red or yellow pellet, allowing yourself to not reach maximum size)
+     if(RectW < 90 && GPX == 1000 && GPX2 == 1000 && GPX3 == 1000 && BPX == 1000 && BPX2 == 1000 && BPX3 == 1000){
+     textSize(80);
+     text("YOU LOSE", 120, 200);
+     noLoop();
+      }
   }
 
   void keyPressed() {
     if (key == 's') {
       RectSH = 2;
       RectSV = 0;
+      println("lmao");
     }
     if (key == 'w') {
       RectSH = -2;
