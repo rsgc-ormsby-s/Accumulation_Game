@@ -51,8 +51,10 @@ void setup() {
 
 void draw() {
     
+  PImage Lose = loadImage("Lose.gif"); 
+PImage Win = loadImage("Win.png");
   //Create and Clear the Background
-  background(0, 0, 100);
+  background(255, 69, 0);
   
     //Title in Center of Program
     fill(150, 0, 0);
@@ -238,13 +240,13 @@ rect(GPX3, GPY3, 10, 10);
     //Win Conditions (if all blue and green pellets are hit any you attain maximum size, while not hitting any of the red pellets or yellow pellets)
     if(RectW == 90 && GPX == 1000 && GPX2 == 1000 && GPX3 == 1000 && BPX == 1000 && BPX2 == 1000 && BPX3 == 1000){
       textSize(80);
-      text("YOU WIN", 120, 200);
+      image(Win, 1, 1, 800, 800);
       noLoop();
     }
     //Win Conditions (if all blue and green pellets are hit and you have hit atleast one red or yellow pellet, allowing yourself to not reach maximum size)
      if(RectW < 90 && GPX == 1000 && GPX2 == 1000 && GPX3 == 1000 && BPX == 1000 && BPX2 == 1000 && BPX3 == 1000){
      textSize(80);
-     text("YOU LOSE", 120, 200);
+     image(Lose, 1, 1, 800, 800);
      noLoop();
       }
   }
