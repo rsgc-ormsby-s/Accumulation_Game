@@ -16,7 +16,9 @@ float RectW = 15;
 float RectH = 15;
 float RectSH = 0;
 float RectSV = 0;
+float Boundary = 15;
 
+//Pellet {1} Variables
 float YPY = random(1, 600);
 float YPX = random(1, 600);
 float RPY = random(1, 600);
@@ -26,6 +28,7 @@ float BPX = random(1, 600);
 float GPY = random(1, 600);
 float GPX = random(1, 600);
 
+//Pellet {2} Variables
 float YPY2 = random(1, 600);
 float YPX2 = random(1, 600);
 float RPY2 = random(1, 600);
@@ -35,6 +38,7 @@ float BPX2 = random(1, 600);
 float GPY2 = random(1, 600);
 float GPX2 = random(1, 600);
 
+//Pellet {3} Variables
 float YPY3 = random(1, 600);
 float YPX3 = random(1, 600);
 float RPY3 = random(1, 600);
@@ -106,9 +110,11 @@ PImage Win = loadImage("Win.png");
 //Creates the Third Yellow Pellet
 fill(255, 215, 0);
 rect(YPX3, YPY3, 10, 10);
+
 //Creates the Third Red Pellet
 fill(250, 0, 0);
 rect(RPX3, RPY3, 10, 10);
+
 //Creates the Third Blue Pellet
 fill(0, 0, 250);
 rect(BPX3, BPY3, 10, 10);
@@ -121,35 +127,35 @@ rect(GPX3, GPY3, 10, 10);
   //Hit Detection for First Set of Pellets
   
   //Yellow Pellet IsTouching (makes the object you touch fly away and makes the rectangle smaller by a large amount)
-  if (RectX > YPX - 15 && YPX + 15 > RectX && RectY > YPY - 15 && RectY < YPY + 15 ) {
+  if (RectX > YPX - Boundary && YPX + Boundary > RectX && RectY > YPY - Boundary && RectY < YPY + Boundary ) {
     YPX = 1000;
     RectW = RectW - 8;
     RectH = RectH - 8;
   }
     //Red Pellet IsTouching (makes the object you touch fly away and makes the rectangle smaller by a small amount)
-    if (RectX > RPX - 15 && RPX + 15 > RectX && RectY > RPY - 15 && RectY < RPY + 15 ) {
+    if (RectX > RPX - Boundary && RPX + Boundary > RectX && RectY > RPY - Boundary && RectY < RPY + Boundary ) {
       RPX = 1000;
       RectW = RectW - 4;
       RectH = RectH - 4;
     }
     //Blue Pellet IsTouching (makes the object you touch fly away and makes the rectangle bigger by a small amount)
-    if (RectX > BPX - 15 && BPX + 15 > RectX && RectY > BPY - 15 && RectY < BPY + 15 ) {
+    if (RectX > BPX - Boundary && BPX + Boundary > RectX && RectY > BPY - Boundary && RectY < BPY + Boundary ) {
       BPX = 1000;
-      RectW = RectW + 10;
-      RectH = RectH + 10;
+      RectW = RectW + 4;
+      RectH = RectH + 4;
     }
     //Green Pellet isTouching (makes the object you touch fly away and makes the rectangle bigger by a large amount)
-    if (RectX > GPX - 15 && GPX + 15 > RectX && RectY > GPY - 15 && RectY < GPY + 15 ) {
+    if (RectX > GPX - Boundary && GPX + Boundary > RectX && RectY > GPY - Boundary && RectY < GPY + Boundary ) {
       GPX = 1000;
-      RectW = RectW + 15;
-      RectH = RectH + 15;
+      RectW = RectW + 8;
+      RectH = RectH + 8;
     }
     
     //Hit Detection for Second Set of Pellets
     
     //Yellow Pellet #2 isTouching
       
-  if (RectX > YPX2 - 15 && YPX2 + 15 > RectX && RectY > YPY2 - 15 && RectY < YPY2 + 15 ) {
+  if (RectX > YPX2 - Boundary && YPX2 + Boundary > RectX && RectY > YPY2 - Boundary && RectY < YPY2 + Boundary ) {
     YPX2 = 1000;
     RectW = RectW - 8;
     RectH = RectH - 8;
@@ -157,7 +163,7 @@ rect(GPX3, GPY3, 10, 10);
   
     //Red Pellet #2 isTouching
     
-    if (RectX > RPX2 - 15 && RPX2 + 15 > RectX && RectY > RPY2 - 15 && RectY < RPY2 + 15 ) {
+    if (RectX > RPX2 - Boundary && RPX2 + Boundary > RectX && RectY > RPY2 - Boundary && RectY < RPY2 + Boundary ) {
       RPX2 = 1000;
       RectW = RectW - 4;
       RectH = RectH - 4;
@@ -165,19 +171,19 @@ rect(GPX3, GPY3, 10, 10);
     
     //Blue Pellet #2 isTouching
     
-    if (RectX > BPX2 - 15 && BPX2 + 15 > RectX && RectY > BPY2 - 15 && RectY < BPY2 + 15 ) {
+    if (RectX > BPX2 - Boundary && BPX2 + Boundary > RectX && RectY > BPY2 - Boundary && RectY < BPY2 + Boundary ) {
       BPX2 = 1000;
-      RectW = RectW + 10;
-      RectH = RectH + 10;
+      RectW = RectW + 4;
+      RectH = RectH + 4;
     }
     
     
     //Green Pellet #2 isTouching
     
-    if (RectX > GPX2 - 15 && GPX2 + 15 > RectX && RectY > GPY2 - 15 && RectY < GPY2 + 15 ) {
+    if (RectX > GPX2 - Boundary && GPX2 + Boundary > RectX && RectY > GPY2 - Boundary && RectY < GPY2 + Boundary ) {
       GPX2 = 1000;
-      RectW = RectW + 15;
-      RectH = RectH + 15;
+      RectW = RectW + 8;
+      RectH = RectH + 8;
     }
     
     
@@ -185,7 +191,7 @@ rect(GPX3, GPY3, 10, 10);
     
     //Yellow Pellet #3 isTouching 
     
-    if (RectX > YPX3 - 15 && YPX3 + 15 > RectX && RectY > YPY3 - 15 && RectY < YPY3 + 15 ) {
+    if (RectX > YPX3 - Boundary && YPX3 + Boundary > RectX && RectY > YPY3 - Boundary && RectY < YPY3 + Boundary ) {
     YPX3 = 1000;
     RectW = RectW - 8;
     RectH = RectH - 8;
@@ -193,7 +199,7 @@ rect(GPX3, GPY3, 10, 10);
   
     //Red Pellet #3 isTouching
     
-      if (RectX > RPX3 - 15 && RPX3 + 15 > RectX && RectY > RPY3 - 15 && RectY < RPY3 + 15 ) {
+      if (RectX > RPX3 - Boundary && RPX3 + Boundary > RectX && RectY > RPY3 - Boundary && RectY < RPY3 + Boundary ) {
       RPX3 = 1000;
       RectW = RectW - 4;
       RectH = RectH - 4;
@@ -201,17 +207,17 @@ rect(GPX3, GPY3, 10, 10);
     
     //Blue Pellet #3 isTouching
     
-        if (RectX > BPX3 - 15 && BPX3 + 15 > RectX && RectY > BPY3 - 15 && RectY < BPY3 + 15 ) {
+        if (RectX > BPX3 - Boundary && BPX3 + Boundary > RectX && RectY > BPY3 - Boundary && RectY < BPY3 + Boundary ) {
       BPX3 = 1000;
-      RectW = RectW + 10;
-      RectH = RectH + 10;
+      RectW = RectW + 4;
+      RectH = RectH + 4;
         }
     //Green Pellet #3 isTouching
     
-     if (RectX > GPX3 - 15 && GPX3 + 15 > RectX && RectY > GPY3 - 15 && RectY < GPY3 + 15 ) {
+     if (RectX > GPX3 - Boundary && GPX3 + Boundary > RectX && RectY > GPY3 - Boundary && RectY < GPY3 + Boundary ) {
       GPX3 = 1000;
-      RectW = RectW + 15;
-      RectH = RectH + 15;
+      RectW = RectW + 8;
+      RectH = RectH + 8;
     }
     
     
@@ -249,13 +255,84 @@ rect(GPX3, GPY3, 10, 10);
      image(Lose, 1, 1, 800, 800);
      noLoop();
       }
+      
+      //Make the initial boundary for the IsTouching statement change based on the pellet hit 
+      
+      //If the Green Pellet is hit boundary = +6
+      
+      if(GPX == 1000){
+      Boundary = Boundary + 6;
+      GPX = GPX + 1;
+      }
+      
+      if(GPX2 == 1000){
+      Boundary = Boundary + 6; 
+      GPX2 = GPX2 + 1;
+      }
+      if(GPX3 == 1000){
+      Boundary = Boundary + 6;
+      GPX3 = GPX3 + 1;
+      }
+      
+      //If the Blue Pellet is hit boundary = +2
+      
+      if(BPX == 1000){
+      Boundary = Boundary + 2;
+      BPX = BPX + 1;
+      }
+      
+      if(BPX2 == 1000){
+      Boundary = Boundary + 2;
+      BPX2 = BPX2 + 1;
+      }
+      
+      if(BPX3 == 1000){
+      Boundary = Boundary + 2;
+      BPX3 = BPX3 + 1;
+      }
+      
+      //If the Red Pellet is hit boundary = -2
+      
+      if(RPX == 1000){
+      Boundary = Boundary - 2;
+      RPX = RPX + 1;
+      }
+      
+      if(RPX2 == 1000){
+      Boundary = Boundary - 2;
+      RPX2 = RPX2 + 1;
+      }
+      
+      if(RPX3 == 1000){
+      Boundary = Boundary - 2;
+      RPX3 = RPX3 + 1;
+      }
+      
+      //If the Yellow Pellet is hit boundary = -6
+      
+      if(YPX == 1000){
+        Boundary = Boundary - 6;
+        YPX = YPX + 1;
+      }
+      
+      if(YPX2 == 1000){
+        Boundary = Boundary - 6;
+        YPX2 = YPX2 + 1;
+      }
+      
+      if(YPX3 == 1000){
+        Boundary = Boundary - 6;
+        YPX3 = YPX3 + 1;
+      }
+        
+      
   }
 
   void keyPressed() {
     if (key == 's') {
       RectSH = 2;
       RectSV = 0;
-      println("lmao");
+     println("lmao");
     }
     if (key == 'w') {
       RectSH = -2;
