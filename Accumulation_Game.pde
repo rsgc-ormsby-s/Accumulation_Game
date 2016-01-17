@@ -1,4 +1,5 @@
-//Purpose: To accumalate your bubble to become the biggest
+//Purpose: To accumalate your bubble to become the biggest possible, avoid disappearing
+//and eating yellow and red pellets
 
 //Rules: If you eat pellets your size increases and decreases based on the pellet you eat.
 //Pellet Descriptions Bellow      
@@ -27,9 +28,9 @@ float Boundary = 15;
 //The method in which the win/lose scenarios are triggered through the increase and deduction of this variable.
 float Trigger = 0;
 //Value of Y for the Star
-float StarY = random(100, 300);
+float StarY = random(1, 800);
 //Value of Y for the Second Star
-float StarY2 = random(300, 600);
+float StarY2 = random(1, 800);
 
 //Pellet {1} Variables
 float YPY = random(1, 600);
@@ -104,7 +105,7 @@ void draw() {
   line(StarX2, StarY2, StarY2 - 9000, StarX2 - 9000);
   }
   //Create Boundaries for the Stars
-  if(StarY2 > 900){
+  if(StarY2 > 900 ){
     StarY2 = random(100, 600); 
   }
   
@@ -401,8 +402,6 @@ void keyPressed() {
   if (key == 's') {
     RectSH = 2;
     RectSV = 0;
-    println("hey"); 
-    println("no");
   }
   //Up Movement
   if (key == 'w') {
