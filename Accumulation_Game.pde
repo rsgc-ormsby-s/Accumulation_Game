@@ -26,6 +26,10 @@ float RectSV = 0;
 float Boundary = 15;
 //The method in which the win/lose scenarios are triggered through the increase and deduction of this variable.
 float Trigger = 0;
+//Value of Y for the Star
+float StarY = random(100, 300);
+//Value of Y for the Second Star
+float StarY2 = random(300, 600);
 
 //Pellet {1} Variables
 float YPY = random(1, 600);
@@ -69,6 +73,41 @@ void draw() {
   PImage Win = loadImage("Win.png");
   //Load the Background
   background(25, 25, 112);
+  
+    //Make the Stars Move
+  StarY = StarY + 1;
+  //Create the Stars
+  fill(255, 165, 0); 
+   for (int StarX = 100; StarX <= 700; StarX += 200){
+    ellipse(StarX, StarY, 15, 15);
+  }
+    //Make line behind the stars
+    stroke(10, 0, 0); 
+  for (int StarX2 = 100; StarX2 <= 700; StarX2 += 200){
+  line(StarX2, StarY, StarY - 9000, StarX2 - 9000);
+  }
+  //Create Boundaries for the Stars
+  if(StarY > 900){
+    StarY = random(100, 600); 
+  }
+  
+      //Make the Stars Move
+  StarY2 = StarY2 + 1;
+  //Create the Stars
+  fill(255, 165, 0); 
+   for (int StarX = 100; StarX <= 700; StarX += 200){
+    ellipse(StarX, StarY2, 15, 15);
+  }
+    //Make line behind the stars
+    stroke(10, 0, 0); 
+  for (int StarX2 = 100; StarX2 <= 700; StarX2 += 200){
+  line(StarX2, StarY2, StarY2 - 9000, StarX2 - 9000);
+  }
+  //Create Boundaries for the Stars
+  if(StarY2 > 900){
+    StarY2 = random(100, 600); 
+  }
+  
   //Title in Center of Program
   fill(255, 165, 0);
   textSize(100);
@@ -77,6 +116,7 @@ void draw() {
   text("A Game by Simon Ormsby", 30, 400);
 
   //Create the Moveable Object
+  stroke(0, 0, 0);
   fill(128, 35, 205);
   rect(RectX, RectY, RectW, RectH);
 
@@ -89,6 +129,7 @@ void draw() {
   //Creates the Pellets
 
   //Create Yellow Pellet
+  stroke(0, 0, 0);
   fill(255, 215, 0);
   rect(YPX, YPY, 10, 10);
   //Create Red Pellet
@@ -361,6 +402,7 @@ void keyPressed() {
     RectSH = 2;
     RectSV = 0;
     println("hey"); 
+    println("no");
   }
   //Up Movement
   if (key == 'w') {
