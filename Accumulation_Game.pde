@@ -10,13 +10,21 @@
 //Green Pellets = Increases size by a lot.
 
 //Global Variables
+//Value of Y for the Object
 float RectY = 400;
+//Value of X for the Object
 float RectX = 400;
+//Width of the Object
 float RectW = 15;
+//Height of the Object
 float RectH = 15;
+//Horizontal Speed of the Object
 float RectSH = 0;
+//Vertical Speed of the Object
 float RectSV = 0;
+//Boundaries ((hitbox)) for the pellets that increase as the size of the Object increases.
 float Boundary = 15;
+//The method in which the win/lose scenarios are triggered through the increase and deduction of this variable.
 float Trigger = 0;
 
 //Pellet {1} Variables
@@ -55,16 +63,18 @@ void setup() {
 }
 
 void draw() {
-
+  //Lose Screen
   PImage Lose = loadImage("Lose.gif"); 
+  //Win Screen
   PImage Win = loadImage("Win.png");
-  //Create and Clear the Background
-  background(255, 69, 0);
-
+  //Load the Background
+  background(25, 25, 112);
   //Title in Center of Program
-  fill(150, 0, 0);
-  textSize(50);
-  text("Accumulation", 200, 300);
+  fill(255, 165, 0);
+  textSize(100);
+  text("Star Eater", 200, 300);
+  textSize(60);
+  text("A Game by Simon Ormsby", 30, 400);
 
   //Create the Moveable Object
   fill(128, 35, 205);
@@ -328,7 +338,6 @@ void draw() {
   }
     //Win Conditions (if all blue and green pellets are hit any you attain maximum size, while not hitting any of the red pellets or yellow pellets)
   if (Trigger == 6) {
-    textSize(80);
     image(Win, 1, 1, 800, 800);
     noLoop();
   }
@@ -336,7 +345,11 @@ void draw() {
   //Lose Conditions (if all blue and green pellets are hit and you have hit atleast one red or yellow pellet, allowing yourself to not reach maximum size)
   println("Trigger is " + Trigger);
   if ( BPX > 800 && BPX2 > 800 & BPX3 > 800 && GPX > 800 && GPX2 > 800 && GPX3 > 800 && Trigger < 6) {
-   textSize(80);
+   image(Lose, 1, 1, 800, 800);
+   noLoop();
+  }
+  //Lose Condition {2} (if the Width of the Object is less than 0 trigger loss screen)
+  if (RectW < 0){
    image(Lose, 1, 1, 800, 800);
    noLoop();
   }
@@ -347,6 +360,7 @@ void keyPressed() {
   if (key == 's') {
     RectSH = 2;
     RectSV = 0;
+    println("hey"); 
   }
   //Up Movement
   if (key == 'w') {
