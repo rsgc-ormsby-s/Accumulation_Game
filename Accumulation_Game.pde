@@ -28,9 +28,9 @@ float Boundary = 15;
 //The method in which the win/lose scenarios are triggered through the increase and deduction of this variable.
 float Trigger = 0;
 //Value of Y for the Star
-float StarY = random(1, 800);
+float StarY = 1;
 //Value of Y for the Second Star
-float StarY2 = random(1, 800);
+float StarY2 = 300;
 
 //Pellet {1} Variables
 float YPY = random(1, 600);
@@ -79,34 +79,34 @@ void draw() {
   StarY = StarY + 1;
   //Create the Stars
   fill(255, 165, 0); 
-   for (int StarX = 100; StarX <= 700; StarX += 200){
+   for (int StarX = 100; StarX <= 700; StarX += 150){
     ellipse(StarX, StarY, 15, 15);
   }
     //Make line behind the stars
     stroke(10, 0, 0); 
-  for (int StarX2 = 100; StarX2 <= 700; StarX2 += 200){
+  for (int StarX2 = 100; StarX2 <= 700; StarX2 += 150){
   line(StarX2, StarY, StarY - 9000, StarX2 - 9000);
   }
   //Create Boundaries for the Stars
   if(StarY > 900){
-    StarY = random(100, 600); 
+    StarY = 1; 
   }
   
       //Make the Stars Move
   StarY2 = StarY2 + 1;
   //Create the Stars
   fill(255, 165, 0); 
-   for (int StarX = 100; StarX <= 700; StarX += 200){
+   for (int StarX = 100; StarX <= 700; StarX += 150){
     ellipse(StarX, StarY2, 15, 15);
   }
     //Make line behind the stars
     stroke(10, 0, 0); 
-  for (int StarX2 = 100; StarX2 <= 700; StarX2 += 200){
+  for (int StarX2 = 100; StarX2 <= 700; StarX2 += 150){
   line(StarX2, StarY2, StarY2 - 9000, StarX2 - 9000);
   }
   //Create Boundaries for the Stars
   if(StarY2 > 900 ){
-    StarY2 = random(100, 600); 
+    StarY2 = 1; 
   }
   
   //Title in Center of Program
